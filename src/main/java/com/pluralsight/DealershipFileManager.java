@@ -4,13 +4,16 @@ package com.pluralsight;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DealershipFileManager {
 
     private static final String FILE_NAME = "dealership.csv";
-    private static ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
 
-    public static void loadVehicleInventory() {
+
+    public Dealership getDealership() {
+        Dealership dealership = null;
+        List<Vehicle> vehicles = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
             String line;
 
@@ -22,6 +25,7 @@ public class DealershipFileManager {
                     String dealershipAddress = dealershipParts[1];
                     String dealershipPhone = dealershipParts[2];
 
+                    dealership = new Dealership(dealershipName,dealershipAddress,dealershipPhone);
                 }
             }
 
@@ -43,12 +47,22 @@ public class DealershipFileManager {
                 }
             }
 
+            for (Vehicle vehicle : vehicles) {
+                dealership.addVehicle(vehicle);
+
+
+            }
+
         } catch (Exception e) {
             System.err.println("This file does not exist!");
             e.printStackTrace();
         }
-        System.out.println(vehicles);
+
+
+        return dealership;
     }
+
+    public void saveDealership(){}
 
 }
 
