@@ -36,10 +36,10 @@ public class UserInterface {
                     processGetByPriceRequest(scanner);
                     break;
                 case "2":
-                    processGetByMakeModelRequest();
+                    processGetByMakeModelRequest(scanner);
                     break;
                 case "3":
-                    processGetByYearRequest();
+                    processGetByYearRequest(scanner);
                     break;
                 case "4":
                     processGetByColorRequest();
@@ -75,10 +75,10 @@ public class UserInterface {
     }
 
     public void processGetByPriceRequest(Scanner scanner) {
-        System.out.println("Minimum price");
-        double min = Double.parseDouble(scanner.nextLine());
-        System.out.println("Maximum price");
-        double max = Double.parseDouble(scanner.nextLine());
+        System.out.println("Minimum price?");
+        int min = Integer.parseInt(scanner.nextLine());
+        System.out.println("Maximum price?");
+        int max = Integer.parseInt(scanner.nextLine());
 
         List<Vehicle> vehicles= dealership.getVehiclesByPrice(min,max);
         displayVehicles(vehicles);
@@ -86,10 +86,25 @@ public class UserInterface {
 
     }
 
-    public void processGetByMakeModelRequest() {
+    public void processGetByMakeModelRequest(Scanner scanner) {
+        System.out.println("Make of Vehicle?");
+        String make = scanner.nextLine();
+        System.out.println("Model of vehicle?");
+        String model = scanner.nextLine();
+
+        List<Vehicle> vehicles= dealership.getVehiclesByMakeModel(make,model);
+        displayVehicles(vehicles);
+
     }
 
-    public void processGetByYearRequest() {
+    public void processGetByYearRequest(Scanner scanner) {
+        System.out.println("Minimum year?");
+       int minYear= Integer.parseInt(scanner.nextLine());
+        System.out.println("Max year?");
+        int maxYear = Integer.parseInt(scanner.nextLine());
+
+        List<Vehicle> vehicles= dealership.getVehiclesByPrice(minYear,maxYear);
+        displayVehicles(vehicles);
     }
 
     public void processGetByColorRequest() {
