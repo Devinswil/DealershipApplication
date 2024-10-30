@@ -81,7 +81,13 @@ public class Dealership {
         }
 
         public List<Vehicle> getVehiclesByType (String vehicleType){
-            return getVehiclesByType(vehicleType);
+            List<Vehicle> matchingResult = new ArrayList<>();
+            for (Vehicle vehicle : inventory) {
+                if(vehicle.getVehicleType().equalsIgnoreCase(vehicleType)){
+                    matchingResult.add(vehicle);
+                }
+            }
+            return matchingResult;
         }
 
         public List<Vehicle> getAllVehicles () {

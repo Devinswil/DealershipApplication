@@ -45,10 +45,10 @@ public class UserInterface {
                     processGetByColorRequest(scanner);
                     break;
                 case "5":
-                    processGetByMileageRequest();
+                    processGetByMileageRequest(scanner);
                     break;
                 case "6":
-                    processGetByVehicleTypeRequest();
+                    processGetByVehicleTypeRequest(scanner);
                     break;
                 case "7":
                     processGetAllVehiclesRequest();
@@ -128,6 +128,11 @@ public class UserInterface {
     }
 
     public void processGetByVehicleTypeRequest(Scanner scanner) {
+        System.out.println("Type of Car?");
+        String vehicleType = scanner.nextLine();
+
+        List<Vehicle> vehicles= dealership.getVehiclesByType(vehicleType);
+        displayVehicles(vehicles);
 
 
     }
