@@ -42,7 +42,7 @@ public class UserInterface {
                     processGetByYearRequest(scanner);
                     break;
                 case "4":
-                    processGetByColorRequest();
+                    processGetByColorRequest(scanner);
                     break;
                 case "5":
                     processGetByMileageRequest();
@@ -99,21 +99,35 @@ public class UserInterface {
 
     public void processGetByYearRequest(Scanner scanner) {
         System.out.println("Minimum year?");
-       int minYear= Integer.parseInt(scanner.nextLine());
+       int min= Integer.parseInt(scanner.nextLine());
         System.out.println("Max year?");
-        int maxYear = Integer.parseInt(scanner.nextLine());
+        int max = Integer.parseInt(scanner.nextLine());
 
-        List<Vehicle> vehicles= dealership.getVehiclesByPrice(minYear,maxYear);
+        List<Vehicle> vehicles= dealership.getVehiclesByYear(min,max);
         displayVehicles(vehicles);
     }
 
-    public void processGetByColorRequest() {
+    public void processGetByColorRequest(Scanner scanner) {
+        System.out.println("What color are you looking for?");
+        String color = scanner.nextLine();
+
+        List<Vehicle> vehicles= dealership.getVehiclesByColor(color);
+        displayVehicles(vehicles);
+
     }
 
-    public void processGetByMileageRequest() {
+    public void processGetByMileageRequest(Scanner scanner) {
+        System.out.println("Minimum Mileage?");
+        double min =Double.parseDouble(scanner.nextLine());
+        System.out.println("Maximum Mileage?");
+        double max =Double.parseDouble(scanner.nextLine());
+
+        List<Vehicle> vehicles= dealership.getVehiclesByMileage(min,max);
+        displayVehicles(vehicles);
+
     }
 
-    public void processGetByVehicleTypeRequest() {
+    public void processGetByVehicleTypeRequest(Scanner scanner) {
 
 
     }
