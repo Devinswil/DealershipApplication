@@ -68,9 +68,10 @@ public class UserInterface {
 
 
             }
-            scanner.close();
+
 
         }
+        scanner.close();
     }
 
     public void processGetByPriceRequest() {

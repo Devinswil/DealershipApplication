@@ -46,7 +46,7 @@ public class Dealership {
 
     public List<Vehicle> getAllVehicles() {
 
-        return getAllVehicles();
+        return inventory;
     }
 
     public void addVehicle(Vehicle vehicle) {
