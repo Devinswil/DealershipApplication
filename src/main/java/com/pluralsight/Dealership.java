@@ -21,11 +21,29 @@ public class Dealership {
     }
 
     public List<Vehicle> getVehiclesByPrice(double min, double max) {
-        return getVehiclesByPrice(min, max);
+        List<Vehicle> matchingResult = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            double price = vehicle.getPrice();
+            if (price>=min&&price<=max);{
+                matchingResult.add(vehicle);
+            }
+            
+        }
+        
+        return matchingResult;
     }
 
     public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
-        return getVehiclesByMakeModel(make, model);
+        List<Vehicle> matchingResult = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            String vmake = vehicle.getMake();
+            String vmodel = vehicle.getModel();
+            if (vehicle.getMake().equalsIgnoreCase(vmake)&&vehicle.getModel().equalsIgnoreCase(vmodel));
+            matchingResult.add(vehicle);
+
+        }
+
+        return matchingResult;
     }
 
     public List<Vehicle> getVehiclesByYear(double min, double max) {

@@ -33,7 +33,7 @@ public class UserInterface {
 
             switch (input.toLowerCase()) {
                 case "1":
-                    processGetByPriceRequest();
+                    processGetByPriceRequest(scanner);
                     break;
                 case "2":
                     processGetByMakeModelRequest();
@@ -74,7 +74,16 @@ public class UserInterface {
         scanner.close();
     }
 
-    public void processGetByPriceRequest() {
+    public void processGetByPriceRequest(Scanner scanner) {
+        System.out.println("Minimum price");
+        double min = Double.parseDouble(scanner.nextLine());
+        System.out.println("Maximum price");
+        double max = Double.parseDouble(scanner.nextLine());
+
+        List<Vehicle> vehicles= dealership.getVehiclesByPrice(min,max);
+        displayVehicles(vehicles);
+
+
     }
 
     public void processGetByMakeModelRequest() {
