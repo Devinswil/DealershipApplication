@@ -12,6 +12,29 @@ public class Dealership {
 
     private ArrayList<Vehicle> inventory;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public Dealership(String name, String address, String phone) {
         this.name = name;
@@ -24,8 +47,8 @@ public class Dealership {
         List<Vehicle> matchingResult = new ArrayList<>();
         for (Vehicle vehicle : inventory) {
             double price = vehicle.getPrice();
-            if (price >= min && price <= max) ;
-            {
+            if (price >= min && price <= max) {
+
                 matchingResult.add(vehicle);
             }
 

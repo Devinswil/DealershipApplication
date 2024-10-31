@@ -15,7 +15,7 @@ public class DealershipFileManager {
 
 
     public Dealership getDealership() {
-        Dealership dealership = new Dealership("Default Name", "Default Address", "Default Phone");
+        Dealership dealership = null;
         List<Vehicle> vehicles = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
             String line;
@@ -67,7 +67,10 @@ public class DealershipFileManager {
     }
 
     public void saveDealership(Dealership dealership){
+
         try (BufferedWriter br = new BufferedWriter(new FileWriter(FILE_NAME))) {
+            br.write(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone());
+           br.newLine();
             for (Vehicle vehicle : dealership.getAllVehicles()) {
                 br.write(String.format("%d|%d|%s|%s|%s|%s|%d|%.2f%n",
                         vehicle.getVin(),

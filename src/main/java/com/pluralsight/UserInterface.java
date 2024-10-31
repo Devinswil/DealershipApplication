@@ -189,7 +189,6 @@ public class UserInterface {
         DealershipFileManager dealershipFileManager = new DealershipFileManager();
         dealershipFileManager.saveDealership(dealership);
     }
-
     private void init() {
         DealershipFileManager dealershipManager = new DealershipFileManager();
         dealership = dealershipManager.getDealership();
