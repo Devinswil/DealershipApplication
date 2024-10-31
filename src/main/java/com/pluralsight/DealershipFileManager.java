@@ -2,7 +2,10 @@ package com.pluralsight;
 
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +15,7 @@ public class DealershipFileManager {
 
 
     public Dealership getDealership() {
-        Dealership dealership = null;
+        Dealership dealership = new Dealership("Default Name", "Default Address", "Default Phone");
         List<Vehicle> vehicles = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
             String line;
@@ -64,6 +67,21 @@ public class DealershipFileManager {
     }
 
     public void saveDealership(Dealership dealership){
+        try (BufferedWriter br = new BufferedWriter(new FileWriter(FILE_NAME))) {
+            for (Vehicle vehicle : dealership.getAllVehicles()) {
+                br.write(String.format("%d|%d|%s|%s|%s|%s|%d|%.2f%n",
+                        vehicle.getVin(),
+                        vehicle.getYear(),
+                        vehicle.getMake(),
+                        vehicle.getModel(),
+                        vehicle.getVehicleType(),
+                        vehicle.getColor(),
+                        vehicle.getOdometer(),
+                        vehicle.getPrice()));
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

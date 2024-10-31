@@ -87,15 +87,24 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return "Vehicle{" +
-                "vin=" + vin +
-                ", year=" + year +
-                ", make='" + make + '\'' +
-                ", model='" + model + '\'' +
-                ", vehicleType='" + vehicleType + '\'' +
-                ", color='" + color + '\'' +
-                ", odometer=" + odometer +
-                ", price=" + price +
-                '}';
+        return String.format("Vehicle Details:\n" +
+                        "--------------------------\n" +
+                        " VIN       : %d\n" +
+                        " Year      : %d\n" +
+                        " Make      : %s\n" +
+                        " Model     : %s\n" +
+                        " Type      : %s\n" +
+                        " Color     : %s\n" +
+                        " Odometer  : %d miles\n" +
+                        " Price     : $%,.2f\n" +
+                        "--------------------------",
+                vin,
+                year,
+                make,
+                model,
+                vehicleType,
+                color,
+                odometer,
+                price);
     }
 }

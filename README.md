@@ -1,21 +1,25 @@
-# Project Title
+# Dealership Application
 
 ## Description of the Project
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
+My dealership application gives users the ability to filter search through dealerships inventories. Each filter will allow for the users to give the console their search requirements and will be shown vehicles according to that.
 
-![Class Diagram](path/to/your/class_diagram.png)
+
 
 ## User Stories
 
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
-
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
+-As a user I would like to be able to remove vehicles from inventory.
+-As a user I would like to be able to search within a certain price range. This will save me time from looking through the whole inventory.
+-As a user I would like to be able to search only by the make and model of vehicles. This will save the time of looking at cars I don't want.
+-As a user I would like to be able to search within a certain year range.
+-As a user I would like to be able to add vehicles into the inventory.
+-As a user I would like to be able to see all the vehicles without having any filters applied.
+-As a user I would like to be able to search for vehicles that have a certain number of miles.
+-As a user I would like to be able to search for vehicles by the type (car,truck,SUV,van).
 
 ## Setup
 
-Instructions on how to set up and run the project using IntelliJ IDEA.
+The application while ask for an input with corresponding action. Once given an input it will display a filtered version o the inventory or will prompt to add or remove vehicle.
 
 ### Prerequisites
 
@@ -34,8 +38,7 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Technologies Used
 
-- Java: Mention the version you are using.
-- Any additional libraries or frameworks used in the project.
+- IntelliJ IDEA Community Edition 2022.3.2
 
 ## Demo
 
@@ -45,26 +48,23 @@ Include screenshots or GIFs that show your application in action. Use tools like
 
 ## Future Work
 
-Outline potential future enhancements or functionalities you might consider adding:
+- want to be able to add new dealerships and add their csv files.
+- Would like to prompt users to select what dealership inventory they would like to look at.
 
-- Additional feature to be developed.
-- Improvement of current functionalities.
 
 ## Resources
 
 List resources such as tutorials, articles, or documentation that helped you during the project.
 
-- [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
+- https://github.com/users/Devinswil/projects/4/views/1?pane=issue&itemId=84838191
+- https://github.com/RayMaroun
 
 ## Team Members
 
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
+n/a
 
 ## Thanks
 
-Express gratitude towards those who provided help, guidance, or resources:
 
-- Thank you to [Mentor's Name] for continuous support and guidance.
-- A special thanks to all teammates for their dedication and teamwork.
+
+- Thank you to Raymond for continuous support and guidance.
